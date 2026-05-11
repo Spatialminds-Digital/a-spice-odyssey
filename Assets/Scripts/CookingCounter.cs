@@ -5,21 +5,40 @@ using UnityEngine;
 public class CookingCounter : BaseCounter
 {
     [SerializeField] private Recipe[] availableRecipes;
+    [SerializeField] private Recipe trashRecipe;
+    [SerializeField] private QuickTimeEvent quickTimeEvent;
 
     private Recipe _cookedRecipe;
+    private List<RecipeItem> _pendingIngredients;
 
     public bool HasCookedRecipe => _cookedRecipe != null;
+
+    private void OnEnable()
+    {
+        if (quickTimeEvent != null)
+            quickTimeEvent.OnQTEComplete += OnQTEComplete;
+    }
+
+    private void OnDisable()
+    {
+        if (quickTimeEvent != null)
+            quickTimeEvent.OnQTEComplete -= OnQTEComplete;
+    }
 
     public override void OnInteract()
     {
         base.OnInteract();
+
+        if (quickTimeEvent != null && quickTimeEvent.IsActive)
+            return;
+
         if (_cookedRecipe != null)
         {
             TryPickupCookedRecipe();
         }
         else if (Inventory.HasIngredients)
         {
-            TryCookRecipe();
+            StartCooking();
         }
     }
 
@@ -31,15 +50,40 @@ public class CookingCounter : BaseCounter
         _cookedRecipe = null;
     }
 
-    private void TryCookRecipe()
+    private void StartCooking()
     {
-        var ingredients = Inventory.TakeAllIngredients();
-        var matchedRecipe = FindMatchingRecipe(ingredients);
+        _pendingIngredients = Inventory.TakeAllIngredients();
 
-        if (matchedRecipe != null)
+        if (quickTimeEvent != null)
         {
-            _cookedRecipe = matchedRecipe;
+            quickTimeEvent.StartQTE();
         }
+        else
+        {
+            CompleteCooking(true);
+        }
+    }
+
+    private void OnQTEComplete(bool success)
+    {
+        CompleteCooking(success);
+    }
+
+    private void CompleteCooking(bool qteSuccess)
+    {
+        if (_pendingIngredients == null) return;
+
+        if (!qteSuccess)
+        {
+            _cookedRecipe = trashRecipe;
+        }
+        else
+        {
+            var matchedRecipe = FindMatchingRecipe(_pendingIngredients);
+            _cookedRecipe = matchedRecipe != null ? matchedRecipe : trashRecipe;
+        }
+
+        _pendingIngredients = null;
     }
 
     private Recipe FindMatchingRecipe(List<RecipeItem> ingredients)

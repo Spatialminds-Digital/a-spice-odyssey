@@ -5,17 +5,59 @@ using System.Collections.Generic;
 [CustomEditor(typeof(Recipe))]
 public class RecipeEditor : Editor
 {
+    private SerializedProperty _recipeNameProperty;
+    private SerializedProperty _spriteProperty;
     private SerializedProperty _recipeItemsProperty;
 
     private void OnEnable()
     {
+        _recipeNameProperty = serializedObject.FindProperty("RecipeName");
+        _spriteProperty = serializedObject.FindProperty("sprite");
         _recipeItemsProperty = serializedObject.FindProperty("recipeItems");
     }
 
     public override void OnInspectorGUI()
     {
-        serializedObject.Update();
+        serializedObject.Update(); 
 
+        // Recipe Info Section
+        EditorGUILayout.LabelField("Recipe Info", EditorStyles.boldLabel);
+        EditorGUILayout.Space(5);
+
+        EditorGUILayout.BeginHorizontal();
+
+        // Sprite preview
+        EditorGUILayout.BeginVertical(GUILayout.Width(70));
+        Sprite currentSprite = _spriteProperty.objectReferenceValue as Sprite;
+        if (currentSprite != null)
+        {
+            Texture2D texture = AssetPreview.GetAssetPreview(currentSprite);
+            if (texture != null)
+            {
+                GUILayout.Label(texture, GUILayout.Width(64), GUILayout.Height(64));
+            }
+            else
+            {
+                GUILayout.Label(GUIContent.none, GUILayout.Width(64), GUILayout.Height(64));
+            }
+        }
+        else
+        {
+            GUILayout.Box(GUIContent.none, GUILayout.Width(64), GUILayout.Height(64));
+        }
+        EditorGUILayout.EndVertical();
+
+        // Name and sprite fields
+        EditorGUILayout.BeginVertical();
+        EditorGUILayout.PropertyField(_recipeNameProperty, new GUIContent("Name"));
+        EditorGUILayout.PropertyField(_spriteProperty, new GUIContent("Sprite"));
+        EditorGUILayout.EndVertical();
+
+        EditorGUILayout.EndHorizontal();
+
+        EditorGUILayout.Space(15);
+
+        // Recipe Items Section
         EditorGUILayout.LabelField("Recipe Items", EditorStyles.boldLabel);
         EditorGUILayout.Space(5);
 
