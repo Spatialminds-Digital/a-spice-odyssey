@@ -29,6 +29,12 @@ public class CookingCounter : BaseCounter
     {
         base.OnInteract();
 
+        //no interaction if a recipe at hand
+        if(PlayerInventory.Instance.HasRecipe) {
+            OnCounterInteractionError?.Invoke();
+            return;
+        }
+
         if (quickTimeEvent != null && quickTimeEvent.IsActive)
             return;
 

@@ -8,6 +8,12 @@ public class IngredientCounter : BaseCounter
     {
         base.OnInteract();
 
+        //cannot pick if recipe in hand
+        if(PlayerInventory.Instance.HasRecipe) {
+            OnCounterInteractionError?.Invoke();
+            return;
+        }
+
         if (ingredient == null) return;
 
         Inventory.AddIngredient(ingredient);

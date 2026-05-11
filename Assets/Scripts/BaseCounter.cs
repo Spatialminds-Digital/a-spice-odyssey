@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,6 +9,7 @@ public abstract class BaseCounter : MonoBehaviour, IInteractable
     public UnityEvent OnHoverInEvent;
     public UnityEvent OnHoverOutEvent;
     public UnityEvent OnInteractEvent;
+    public Action OnCounterInteractionError;
 
     public virtual void OnHoverIn()
     {
