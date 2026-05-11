@@ -14,7 +14,7 @@ public class PlayerInteractor : MonoBehaviour
         InputService.Instance.OnInteract -= HandleInteract;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.TryGetComponent(out IInteractable interactable))
             return;
@@ -27,7 +27,7 @@ public class PlayerInteractor : MonoBehaviour
         _currentInteractable.OnHoverIn();
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit2D(Collider2D other)
     {
         if (!other.TryGetComponent(out IInteractable interactable))
             return;

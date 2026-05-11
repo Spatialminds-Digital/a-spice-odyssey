@@ -6,6 +6,8 @@ public class IngredientCounter : BaseCounter
 
     public override void OnInteract()
     {
+        base.OnInteract();
+
         if (ingredient == null) return;
 
         Inventory.AddIngredient(ingredient);

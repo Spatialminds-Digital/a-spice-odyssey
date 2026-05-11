@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+[DefaultExecutionOrder(-9)]
 public class PlayerInventory : MonoBehaviour
 {
     public static PlayerInventory Instance { get; private set; }
@@ -11,7 +12,7 @@ public class PlayerInventory : MonoBehaviour
 
     private readonly List<RecipeItem> _heldIngredients = new();
     private Recipe _heldRecipe;
-
+ 
     public IReadOnlyList<RecipeItem> HeldIngredients => _heldIngredients;
     public Recipe HeldRecipe => _heldRecipe;
 
@@ -71,5 +72,10 @@ public class PlayerInventory : MonoBehaviour
         return _heldIngredients
             .GroupBy(item => item)
             .ToDictionary(g => g.Key, g => g.Count());
+    }
+
+    public int GetItemCount(RecipeItem item)
+    {
+        return _heldIngredients.Count(i => i == item);
     }
 }

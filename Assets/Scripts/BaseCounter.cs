@@ -1,22 +1,26 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public abstract class BaseCounter : MonoBehaviour, IInteractable
 {
-    [SerializeField] protected GameObject hoverVisual;
-
     protected PlayerInventory Inventory => PlayerInventory.Instance;
+
+    public UnityEvent OnHoverInEvent;
+    public UnityEvent OnHoverOutEvent;
+    public UnityEvent OnInteractEvent;
 
     public virtual void OnHoverIn()
     {
-        if (hoverVisual != null)
-            hoverVisual.SetActive(true);
+        OnHoverInEvent?.Invoke();
     }
 
     public virtual void OnHoverOut()
     {
-        if (hoverVisual != null)
-            hoverVisual.SetActive(false);
+        OnHoverOutEvent?.Invoke();
     }
 
-    public abstract void OnInteract();
+    public virtual void OnInteract()
+    {
+        OnInteractEvent?.Invoke();
+    }
 }

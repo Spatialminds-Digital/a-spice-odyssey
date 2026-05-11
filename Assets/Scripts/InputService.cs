@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[DefaultExecutionOrder(-10)]
 public class InputService : MonoBehaviour
 {
     private ArcadeInputs _arcadeInputs;

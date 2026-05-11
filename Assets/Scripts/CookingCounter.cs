@@ -12,6 +12,7 @@ public class CookingCounter : BaseCounter
 
     public override void OnInteract()
     {
+        base.OnInteract();
         if (_cookedRecipe != null)
         {
             TryPickupCookedRecipe();
