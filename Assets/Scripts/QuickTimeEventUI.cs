@@ -65,7 +65,9 @@ public class QuickTimeEventUI : MonoBehaviour
         if (greenZone == null || quickTimeEvent == null) return;
 
         float zoneWidth = _barWidth * quickTimeEvent.GreenZoneSize;
-        float centerPosition = _barWidth * quickTimeEvent.GreenZoneCenter;
+
+        // Use the clamped center to ensure the green zone stays within the bar
+        float centerPosition = _barWidth * quickTimeEvent.ClampedGreenZoneCenter;
 
         greenZone.sizeDelta = new Vector2(zoneWidth, greenZone.sizeDelta.y);
         greenZone.anchoredPosition = new Vector2(centerPosition - (_barWidth / 2f), greenZone.anchoredPosition.y);

@@ -14,6 +14,20 @@ public class QuickTimeEvent : MonoBehaviour
 
     public float GreenZoneSize => greenZoneSize;
     public float GreenZoneCenter => greenZoneCenter;
+    public float OscillationSpeed => oscillationSpeed;
+
+    /// <summary>
+    /// Updates QTE difficulty settings. Used by GameManager to increase complexity.
+    /// </summary>
+    /// <param name="newSpeed">Oscillation speed (higher = faster)</param>
+    /// <param name="newGreenZoneSize">Green zone size as fraction of bar (0.05 to 0.5)</param>
+    /// <param name="newGreenZoneCenter">Green zone center position (0 to 1)</param>
+    public void SetDifficulty(float newSpeed, float newGreenZoneSize, float newGreenZoneCenter = 0.5f)
+    {
+        oscillationSpeed = Mathf.Max(0.1f, newSpeed);
+        greenZoneSize = Mathf.Clamp(newGreenZoneSize, 0.05f, 0.5f);
+        greenZoneCenter = Mathf.Clamp(newGreenZoneCenter, 0f, 1f);
+    }
     public float IndicatorPosition => _indicatorPosition;
     public bool IsActive => _isActive;
 
@@ -90,9 +104,25 @@ public class QuickTimeEvent : MonoBehaviour
     private bool IsInGreenZone()
     {
         float halfSize = greenZoneSize / 2f;
-        float minGreen = greenZoneCenter - halfSize;
-        float maxGreen = greenZoneCenter + halfSize;
+
+        // Clamp the center so the green zone stays within 0-1 bounds
+        float clampedCenter = Mathf.Clamp(greenZoneCenter, halfSize, 1f - halfSize);
+
+        float minGreen = clampedCenter - halfSize;
+        float maxGreen = clampedCenter + halfSize;
 
         return _indicatorPosition >= minGreen && _indicatorPosition <= maxGreen;
+    }
+
+    /// <summary>
+    /// Returns the clamped green zone center that ensures the zone stays within bounds.
+    /// </summary>
+    public float ClampedGreenZoneCenter
+    {
+        get
+        {
+            float halfSize = greenZoneSize / 2f;
+            return Mathf.Clamp(greenZoneCenter, halfSize, 1f - halfSize);
+        }
     }
 }
