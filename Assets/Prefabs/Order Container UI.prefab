@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The Singularity Shot
+  m_text: Horizon Hot-Sauce
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a2ac3c450ed84014bb43f54e8f1f9562, type: 2}
   m_sharedMaterial: {fileID: -419928629892710787, guid: a2ac3c450ed84014bb43f54e8f1f9562, type: 2}
@@ -148,6 +148,7 @@ GameObject:
   - component: {fileID: 7295389564653870975}
   - component: {fileID: 4841042971969253075}
   - component: {fileID: 646701958686103686}
+  - component: {fileID: 7528325360234643112}
   m_Layer: 5
   m_Name: Order Container UI
   m_TagString: Untagged
@@ -162,7 +163,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6058352630957744938}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -215,6 +216,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7528325360234643112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6058352630957744938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72b9d33e712585e448a9153a2e7e9f91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OrderContentUI
+  trayItemPrefab: {fileID: 120783500119304572, guid: 5b1a12f819f118547add32921fd0815f, type: 3}
+  itemContainer: {fileID: 892288941175397379}
+  txtRecipeName: {fileID: 668556804353964854}
+  imgRecipeSprite: {fileID: 6612755482465719180}
 --- !u!1 &9089643552470424007
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,7 +479,8 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6701160549861096343, guid: 480f7ed2d1087764990d392bc2a6cf39, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

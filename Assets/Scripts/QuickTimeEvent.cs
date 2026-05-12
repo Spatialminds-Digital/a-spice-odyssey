@@ -21,12 +21,10 @@ public class QuickTimeEvent : MonoBehaviour
     /// </summary>
     /// <param name="newSpeed">Oscillation speed (higher = faster)</param>
     /// <param name="newGreenZoneSize">Green zone size as fraction of bar (0.05 to 0.5)</param>
-    /// <param name="newGreenZoneCenter">Green zone center position (0 to 1)</param>
-    public void SetDifficulty(float newSpeed, float newGreenZoneSize, float newGreenZoneCenter = 0.5f)
+    public void SetDifficulty(float newSpeed, float newGreenZoneSize)
     {
         oscillationSpeed = Mathf.Max(0.1f, newSpeed);
         greenZoneSize = Mathf.Clamp(newGreenZoneSize, 0.05f, 0.5f);
-        greenZoneCenter = Mathf.Clamp(newGreenZoneCenter, 0f, 1f);
     }
     public float IndicatorPosition => _indicatorPosition;
     public bool IsActive => _isActive;
@@ -84,6 +82,7 @@ public class QuickTimeEvent : MonoBehaviour
         _isActive = true;
         _indicatorPosition = 0f;
         _movingRight = true;
+        greenZoneCenter = UnityEngine.Random.Range(0f, 1f);
         OnQTEStarted?.Invoke();
     }
 
