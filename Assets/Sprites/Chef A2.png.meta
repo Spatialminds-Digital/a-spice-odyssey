@@ -1,0 +1,819 @@
+fileFormatVersion: 2
+guid: ac0c8a347aabbca4db0fcdd1de4a521d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2300005727306453467
+    second: Chef A2_0
+  - first:
+      213: 2337782826387589089
+    second: Chef A2_1
+  - first:
+      213: -2198443021186188963
+    second: Chef A2_2
+  - first:
+      213: -5272459667383159017
+    second: Chef A2_3
+  - first:
+      213: -4749435419057314442
+    second: Chef A2_4
+  - first:
+      213: 6184306662524921554
+    second: Chef A2_5
+  - first:
+      213: -3292252911035845666
+    second: Chef A2_6
+  - first:
+      213: 7730535500603343875
+    second: Chef A2_7
+  - first:
+      213: -1863500053215572316
+    second: Chef A2_8
+  - first:
+      213: 2896219296575531461
+    second: Chef A2_9
+  - first:
+      213: -7153941176521913799
+    second: Chef A2_10
+  - first:
+      213: 163114656556084248
+    second: Chef A2_11
+  - first:
+      213: -9104257110518029461
+    second: Chef A2_12
+  - first:
+      213: 5937502367657599538
+    second: Chef A2_13
+  - first:
+      213: -6025169033510655330
+    second: Chef A2_14
+  - first:
+      213: -7556951811229935815
+    second: Chef A2_15
+  - first:
+      213: -4589008407918552322
+    second: Chef A2_16
+  - first:
+      213: -211072579712688790
+    second: Chef A2_17
+  - first:
+      213: 8541241191026106785
+    second: Chef A2_18
+  - first:
+      213: 3668819114670727723
+    second: Chef A2_19
+  - first:
+      213: -4298361769224826439
+    second: Chef A2_20
+  - first:
+      213: 4625402992889254019
+    second: Chef A2_21
+  - first:
+      213: 4246410552168332024
+    second: Chef A2_22
+  - first:
+      213: 8303802129066635955
+    second: Chef A2_23
+  - first:
+      213: 8248294405490341571
+    second: Chef A2_24
+  - first:
+      213: 6781587789752233203
+    second: Chef A2_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Chef A2_0
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 173
+        width: 22
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52ee88a1afcb410e0800000000000000
+      internalID: -2300005727306453467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chef A2_1
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 173
+        width: 22
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e747d03819717020800000000000000
+      internalID: 2337782826387589089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chef A2_2
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 173
+        width: 22
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d59b24758bf8d71e0800000000000000
+      internalID: -2198443021186188963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chef A2_3
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 173
+        width: 22
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7177d010ed574d6b0800000000000000
+      internalID: -5272459667383159017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chef A2_4
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 177
+        width: 28
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6752e6366ad961eb0800000000000000
+      internalID: -4749435419057314442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chef A2_5
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 169
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d621e9c42213d550800000000000000
+      internalID: 6184306662524921554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chef A2_6
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 131
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed376f6ab619f42d0800000000000000
+      internalID: -3292252911035845666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chef A2_7
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 133
+        width: 26
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30442056411684b60800000000000000
+      internalID: 7730535500603343875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chef A2_8
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 131
+        width: 20
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ae0a2923948326e0800000000000000
+      internalID: -1863500053215572316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chef A2_9
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 131
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c9240cfa10713820800000000000000
+      internalID: 2896219296575531461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chef A2_10
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 133
+        width: 26
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93a0f55376818bc90800000000000000
+      internalID: -7153941176521913799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chef A2_11
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 131
+        width: 26
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81c6fa97aef734200800000000000000
+      internalID: 163114656556084248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chef A2_12
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 93
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b63afb7f46e27a180800000000000000
+      internalID: -9104257110518029461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chef A2_13
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 93
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 232a545f1fe366250800000000000000
+      internalID: 5937502367657599538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chef A2_14
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 91
+        width: 22
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9ae9edcfac426ca0800000000000000
+      internalID: -6025169033510655330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chef A2_15
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 93
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93715eabd50502790800000000000000
+      internalID: -7556951811229935815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chef A2_16
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 91
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efadbb6aa219050c0800000000000000
+      internalID: -4589008407918552322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chef A2_17
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 53
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6d56686b9e121df0800000000000000
+      internalID: -211072579712688790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chef A2_18
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 57
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a1ab0c1c95988670800000000000000
+      internalID: 8541241191026106785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chef A2_19
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 61
+        width: 32
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b22ac1beb834ae230800000000000000
+      internalID: 3668819114670727723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chef A2_20
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 55
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b11c3d9eb62954c0800000000000000
+      internalID: -4298361769224826439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chef A2_21
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 57
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 380513ef38bb03040800000000000000
+      internalID: 4625402992889254019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chef A2_22
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 61
+        width: 32
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fab67416e74eea30800000000000000
+      internalID: 4246410552168332024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chef A2_23
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 15
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b2362c7a080d3370800000000000000
+      internalID: 8303802129066635955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chef A2_24
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 15
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c6f71a7f04d77270800000000000000
+      internalID: 8248294405490341571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chef A2_25
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 15
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fcee451a2a0d1e50800000000000000
+      internalID: 6781587789752233203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Chef A2_0: -2300005727306453467
+      Chef A2_1: 2337782826387589089
+      Chef A2_10: -7153941176521913799
+      Chef A2_11: 163114656556084248
+      Chef A2_12: -9104257110518029461
+      Chef A2_13: 5937502367657599538
+      Chef A2_14: -6025169033510655330
+      Chef A2_15: -7556951811229935815
+      Chef A2_16: -4589008407918552322
+      Chef A2_17: -211072579712688790
+      Chef A2_18: 8541241191026106785
+      Chef A2_19: 3668819114670727723
+      Chef A2_2: -2198443021186188963
+      Chef A2_20: -4298361769224826439
+      Chef A2_21: 4625402992889254019
+      Chef A2_22: 4246410552168332024
+      Chef A2_23: 8303802129066635955
+      Chef A2_24: 8248294405490341571
+      Chef A2_25: 6781587789752233203
+      Chef A2_3: -5272459667383159017
+      Chef A2_4: -4749435419057314442
+      Chef A2_5: 6184306662524921554
+      Chef A2_6: -3292252911035845666
+      Chef A2_7: 7730535500603343875
+      Chef A2_8: -1863500053215572316
+      Chef A2_9: 2896219296575531461
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

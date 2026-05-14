@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     private Camera _mainCamera;
     private bool _isFacingRight = true;
 
+    public float currentVelocity => _currentVelocity;
+
     void Start()
     {
         _mainCamera = Camera.main;
