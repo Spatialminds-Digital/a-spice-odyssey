@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 3. Acidic Asteroid
   m_EditorClassIdentifier: Assembly-CSharp::Recipe
   RecipeName: Acidic Asteroid
-  sprite: {fileID: -107646731, guid: 161c6c24315b3254d889f651d902c149, type: 3}
+  sprite: {fileID: 3466478994150482027, guid: ac99b6cba2fb845d6906295429060abf, type: 3}
   recipeItems:
   - item: {fileID: 11400000, guid: e1a75a593df8e5542bc055c81e33dcf3, type: 2}
     count: 1

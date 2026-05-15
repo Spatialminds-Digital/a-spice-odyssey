@@ -29,11 +29,16 @@ public class EnemySpawner : MonoBehaviour
     private IObjectPool<Enemy> _mainEnemyPool;
     private IObjectPool<Enemy> _basicEnemyPool;
     private Dictionary<Order, Enemy> _orderEnemyMap = new Dictionary<Order, Enemy>();
+    private List<Enemy> _activeBasicEnemies = new List<Enemy>();
     private Coroutine _basicSpawnCoroutine;
 
     private float _currentMainEnemySpeed;
 
     public Action<Enemy, Order> OnMainEnemyReachedPlayer;
+    public Action<Enemy> OnEnemyKill;
+
+    public List<Enemy> ActiveBasicEnemies => _activeBasicEnemies;
+
 
     void Awake()
     {
@@ -104,6 +109,7 @@ public class EnemySpawner : MonoBehaviour
     private void OnReleaseEnemy(Enemy enemy)
     {
         enemy.gameObject.SetActive(false);
+        _activeBasicEnemies.Remove(enemy);
     }
 
     private void OnDestroyEnemy(Enemy enemy)
@@ -143,6 +149,7 @@ public class EnemySpawner : MonoBehaviour
     {
         Enemy enemy = _basicEnemyPool.Get();
         enemy.transform.position = GetRandomSpawnPosition();
+        _activeBasicEnemies.Add(enemy);
 
         var movement = enemy.GetComponent<EnemyMovement>();
         if (movement != null)
@@ -185,17 +192,20 @@ public class EnemySpawner : MonoBehaviour
 
     private void HandleOrderComplete(Order order)
     {
-        KillEnemyForOrder(order);
+         if (_orderEnemyMap.TryGetValue(order, out Enemy enemy))
+        {
+            _orderEnemyMap.Remove(order);
+            if (enemy != null)
+            {
+                enemy.Kill();
+                OnEnemyKill?.Invoke(enemy);
+            }
+        }
     }
 
     private void HandleOrderRemoved(Order order)
     {
-        KillEnemyForOrder(order);
-    }
-
-    private void KillEnemyForOrder(Order order)
-    {
-        if (_orderEnemyMap.TryGetValue(order, out Enemy enemy))
+         if (_orderEnemyMap.TryGetValue(order, out Enemy enemy))
         {
             _orderEnemyMap.Remove(order);
             if (enemy != null)
@@ -204,6 +214,7 @@ public class EnemySpawner : MonoBehaviour
             }
         }
     }
+
 
     private void HandleMainEnemyReachedPlayer(Enemy enemy, Order order)
     {
@@ -234,4 +245,6 @@ public class EnemySpawner : MonoBehaviour
     {
         _orderEnemyMap.Remove(order);
     }
+
+    
 }

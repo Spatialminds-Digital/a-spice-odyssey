@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 2. Crystalline Glaze
   m_EditorClassIdentifier: Assembly-CSharp::Recipe
   RecipeName: Crystalline Glaze
-  sprite: {fileID: 1882536452, guid: 161c6c24315b3254d889f651d902c149, type: 3}
+  sprite: {fileID: -636001505, guid: ac99b6cba2fb845d6906295429060abf, type: 3}
   recipeItems:
   - item: {fileID: 11400000, guid: d809255bd86ff5241ab2a7ebfbc893ef, type: 2}
     count: 2

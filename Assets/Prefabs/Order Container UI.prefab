@@ -201,14 +201,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3443396, g: 1, b: 0.9451652, a: 1}
+  m_Color: {r: 0.09433961, g: 0.09433961, b: 0.09433961, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -8102783391107283522, guid: 016ca305f89006646b82e16e566610de, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 952da6f23913979478d40a8f9a9d0a55, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -359,8 +359,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0.1346488, y: 1}
-  m_AnchoredPosition: {x: 1.0599976, y: -12.129999}
-  m_SizeDelta: {x: -9, y: 20}
+  m_AnchoredPosition: {x: 3.0366974, y: -10.935}
+  m_SizeDelta: {x: -5.97, y: 22.13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8628820028846235720
 CanvasRenderer:
@@ -384,7 +384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -392,7 +392,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: -2088822983204536063, guid: ac99b6cba2fb845d6906295429060abf, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -550,15 +550,15 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: ed788fed0ef38a148ae2e95b515d401d, type: 3}
     - target: {fileID: 1706703427808600455, guid: 480f7ed2d1087764990d392bc2a6cf39, type: 3}
       propertyPath: m_Color.b
-      value: 0.6446766
+      value: 0.07847183
       objectReference: {fileID: 0}
     - target: {fileID: 1706703427808600455, guid: 480f7ed2d1087764990d392bc2a6cf39, type: 3}
       propertyPath: m_Color.g
-      value: 0.8962264
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1706703427808600455, guid: 480f7ed2d1087764990d392bc2a6cf39, type: 3}
       propertyPath: m_Color.r
-      value: 0.14796188
+      value: 0.3301887
       objectReference: {fileID: 0}
     - target: {fileID: 3095707730493471635, guid: 480f7ed2d1087764990d392bc2a6cf39, type: 3}
       propertyPath: m_AnchorMax.y

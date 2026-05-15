@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class IngredientInventoryCounter : MonoBehaviour
 {
-    [SerializeField] private TMP_Text txtItemCount;
+    [SerializeField] private SpriteRenderer recipeItemImage;
     [SerializeField] private RecipeItem recipeItem;
 
+    void Start()
+    {
+        recipeItemImage.sprite = recipeItem.itemSprite;
+    }
+    
     void OnEnable()
     {
         PlayerInventory.Instance.OnInventoryChanged += OnInventoryChanged;
@@ -14,8 +19,6 @@ public class IngredientInventoryCounter : MonoBehaviour
 
     private void OnInventoryChanged()
     {
-        var itemCount = PlayerInventory.Instance.GetItemCount(recipeItem);
-        txtItemCount.SetText(itemCount == 0 ? "" : itemCount.ToString());
     }
 
     void OnDisable()

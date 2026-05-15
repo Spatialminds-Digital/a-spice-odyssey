@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 1. The Singularity Shot
   m_EditorClassIdentifier: Assembly-CSharp::Recipe
   RecipeName: The Singularity Shot
-  sprite: {fileID: -1109193871, guid: 161c6c24315b3254d889f651d902c149, type: 3}
+  sprite: {fileID: -7779270209535328870, guid: ac99b6cba2fb845d6906295429060abf, type: 3}
   recipeItems:
   - item: {fileID: 11400000, guid: b81e618280ff14c439e2c7456aa5f9da, type: 2}
     count: 1

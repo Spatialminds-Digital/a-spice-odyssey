@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 5. Neon Lard-Bomb
   m_EditorClassIdentifier: Assembly-CSharp::Recipe
   RecipeName: Neon Lard-Bomb
-  sprite: {fileID: -956060031, guid: 161c6c24315b3254d889f651d902c149, type: 3}
+  sprite: {fileID: 4511483121952714289, guid: ac99b6cba2fb845d6906295429060abf, type: 3}
   recipeItems:
   - item: {fileID: 11400000, guid: 9070b4e8ecc5ed849977bae70e9c5a30, type: 2}
     count: 2
