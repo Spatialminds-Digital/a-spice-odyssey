@@ -200,4 +200,5 @@ MonoBehaviour:
   - {fileID: 60124248983847690, guid: 23007842f54acc340b8967af3a492af6, type: 3}
   - {fileID: 5927740863143096507, guid: 23007842f54acc340b8967af3a492af6, type: 3}
   enemyVisualRenderer: {fileID: 3762220913528662470}
+  killParticle: {fileID: 8194992990867289339, guid: 99bc28c0d45f51c4fbac01080b73edc7, type: 3}
   _orderImage: {fileID: 0}

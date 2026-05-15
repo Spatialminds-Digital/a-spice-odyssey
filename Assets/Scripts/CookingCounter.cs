@@ -7,6 +7,7 @@ public class CookingCounter : BaseCounter
     [SerializeField] private Recipe[] availableRecipes;
     [SerializeField] private Recipe trashRecipe;
     [SerializeField] private QuickTimeEvent quickTimeEvent;
+    [SerializeField] private GameObject cookingParticle;
 
     private Recipe _cookedRecipe;
     private List<RecipeItem> _pendingIngredients;
@@ -63,10 +64,15 @@ public class CookingCounter : BaseCounter
         if (quickTimeEvent != null)
         {
             quickTimeEvent.StartQTE();
+            //stop player movement
+            GameplayManager.Instance.playerMovement.enabled = false;
+            cookingParticle?.SetActive(true);
         }
         else
         {
             CompleteCooking(true);
+
+
         }
     }
 
@@ -90,6 +96,10 @@ public class CookingCounter : BaseCounter
         }
 
         _pendingIngredients = null;
+
+        
+        GameplayManager.Instance.playerMovement.enabled = true;
+        cookingParticle?.SetActive(false);
     }
 
     private Recipe FindMatchingRecipe(List<RecipeItem> ingredients)

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Trash
   m_EditorClassIdentifier: Assembly-CSharp::Recipe
   RecipeName: Trash
-  sprite: {fileID: -1185121588, guid: 161c6c24315b3254d889f651d902c149, type: 3}
+  sprite: {fileID: -2088822983204536063, guid: ac99b6cba2fb845d6906295429060abf, type: 3}
   recipeItems: []

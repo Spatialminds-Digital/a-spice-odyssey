@@ -60,6 +60,7 @@ public class GameplayManager : MonoBehaviour
 
     // Cached components
     private PlayerMovement _playerMovement;
+    public PlayerMovement playerMovement => _playerMovement;
     private PlayerInteractor _playerInteractor;
 
     // Cached WaitForSeconds

@@ -226,6 +226,7 @@ MonoBehaviour:
   - {fileID: 1566949065226411009, guid: 23007842f54acc340b8967af3a492af6, type: 3}
   - {fileID: 8453258841362001990, guid: 23007842f54acc340b8967af3a492af6, type: 3}
   enemyVisualRenderer: {fileID: 3734716716923175525}
+  killParticle: {fileID: 2433282508537954060, guid: 3ef3ae421f71c5c4e97fe12dc2fc6312, type: 3}
   _orderImage: {fileID: 2646171293876196240}
 --- !u!1 &5064688413338341799
 GameObject:

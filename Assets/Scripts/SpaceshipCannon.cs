@@ -25,6 +25,9 @@ public class SpaceshipCannon : MonoBehaviour
         {
             cannonObject.SetActive(false);
         }
+
+        line.SetPosition(0, originPoint.position);
+
     }
 
     void OnEnable()
@@ -46,7 +49,6 @@ public class SpaceshipCannon : MonoBehaviour
     {
         cannonObject.SetActive(true);
 
-        line.SetPosition(0, originPoint.position);
         line.SetPosition(1, enemy.transform.position);
         _timer = timeToStayAlive;
 

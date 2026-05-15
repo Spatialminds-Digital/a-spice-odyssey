@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private bool isMainEnemy = false;
     [SerializeField] private Sprite[] enemyVisuals;
     [SerializeField] private SpriteRenderer enemyVisualRenderer;
+    [SerializeField] private GameObject killParticle;
 
     [Header("Main Enemy")]
     [SerializeField] private SpriteRenderer _orderImage;
@@ -39,6 +40,10 @@ public class Enemy : MonoBehaviour
     public void Kill()
     {
         //TODO: particle effects
+        if(killParticle)
+        {
+            Instantiate(killParticle, transform.position, Quaternion.identity);
+        }
         _enemyOrder = null;
 
         var movement = GetComponent<EnemyMovement>();
