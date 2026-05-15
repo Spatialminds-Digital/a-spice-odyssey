@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OrdersUI : MonoBehaviour
 {
@@ -29,6 +30,9 @@ public class OrdersUI : MonoBehaviour
         var orderUI = Instantiate(orderContentPrefab, container);
         orderUI.UpdateOrderContent(order.recipe);
         _orderUIMap[order] = orderUI;
+
+        
+        LayoutRebuilder.ForceRebuildLayoutImmediate(container.GetComponent<RectTransform>());
     }
 
     private void HandleOrderComplete(Order order)

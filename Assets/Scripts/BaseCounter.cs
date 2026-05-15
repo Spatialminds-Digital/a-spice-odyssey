@@ -10,6 +10,12 @@ public abstract class BaseCounter : MonoBehaviour, IInteractable
     public UnityEvent OnHoverOutEvent;
     public UnityEvent OnInteractEvent;
     public Action OnCounterInteractionError;
+    
+    public virtual void Start()
+    {
+                OnHoverOutEvent?.Invoke();
+
+    }
 
     public virtual void OnHoverIn()
     {

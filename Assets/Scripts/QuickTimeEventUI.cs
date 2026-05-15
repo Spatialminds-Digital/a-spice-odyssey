@@ -9,11 +9,6 @@ public class QuickTimeEventUI : MonoBehaviour
     [SerializeField] private RectTransform barBackground;
     [SerializeField] private RectTransform greenZone;
     [SerializeField] private RectTransform indicator;
-
-    [Header("Colors")]
-    [SerializeField] private Color greenColor = Color.green;
-    [SerializeField] private Color redColor = Color.red;
-
     private float _barWidth;
 
     private void Awake()
@@ -71,10 +66,6 @@ public class QuickTimeEventUI : MonoBehaviour
 
         greenZone.sizeDelta = new Vector2(zoneWidth, greenZone.sizeDelta.y);
         greenZone.anchoredPosition = new Vector2(centerPosition - (_barWidth / 2f), greenZone.anchoredPosition.y);
-
-        var image = greenZone.GetComponent<Image>();
-        if (image != null)
-            image.color = greenColor;
     }
 
     private void UpdateIndicator(float normalizedPosition)
