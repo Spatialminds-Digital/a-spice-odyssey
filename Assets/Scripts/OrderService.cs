@@ -55,6 +55,14 @@ public class OrderService : MonoBehaviour
         }
     }
 
+    public void RemoveOrder(Order order)
+    {
+        if (_availableOrders.Remove(order))
+        {
+            OnOrderRemoved?.Invoke(order);
+        }
+    }
+
     public void ClearAllOrders()
     {
         _availableOrders.Clear();

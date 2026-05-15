@@ -1,20 +1,30 @@
+using System;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] private bool isMainEnemy = false;
     [SerializeField] private float xDistanceForAttack = 5f;
+    [SerializeField] private float reachDistance = 0.5f;
+
     private float _speed;
     private Transform _spaceShip;
     private bool _isAttacking = false;
+    private bool _hasReachedPlayer = false;
 
-    public bool IsMainEnemy => isMainEnemy;
+    private Enemy _enemy;
+
+    public Action OnReachedPlayer;
+
+    void Awake()
+    {
+        _enemy = GetComponent<Enemy>();
+    }
 
     void Update()
     {
-        if (_speed <= 0) return;
+        if (_speed <= 0 || _hasReachedPlayer) return;
 
-        if (isMainEnemy)
+        if (_enemy.IsMainEnemy)
         {
             if (!_isAttacking && _spaceShip != null)
             {
@@ -29,6 +39,13 @@ public class EnemyMovement : MonoBehaviour
             {
                 Vector3 direction = (_spaceShip.position - transform.position).normalized;
                 transform.position += direction * _speed * Time.deltaTime;
+
+                float distance = Vector3.Distance(transform.position, _spaceShip.position);
+                if (distance <= reachDistance)
+                {
+                    _hasReachedPlayer = true;
+                    OnReachedPlayer?.Invoke();
+                }
             }
             else
             {
@@ -46,5 +63,16 @@ public class EnemyMovement : MonoBehaviour
         _speed = speed;
         _spaceShip = spaceShip;
         _isAttacking = false;
+        _hasReachedPlayer = false;
+        OnReachedPlayer = null;
+    }
+
+    public void ResetMovement()
+    {
+        _speed = 0;
+        _spaceShip = null;
+        _isAttacking = false;
+        _hasReachedPlayer = false;
+        OnReachedPlayer = null;
     }
 }

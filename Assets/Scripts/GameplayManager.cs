@@ -10,6 +10,7 @@ public class GameplayManager : MonoBehaviour
     [SerializeField] private OrderService orderService;
     [SerializeField] private QuickTimeEvent quickTimeEvent;
     [SerializeField] private GameObject playerObject;
+    [SerializeField] private EnemySpawner enemySpawner;
 
     [Header("Countdown Settings")]
     [SerializeField] private float countdownDuration = 3f;
@@ -30,6 +31,10 @@ public class GameplayManager : MonoBehaviour
     [SerializeField] private float minimumGreenZoneSize = 0.1f;
     [SerializeField] private float initialQTESpeed = 1f;
     [SerializeField] private float maximumQTESpeed = 3f;
+
+    [Header("Enemy Difficulty Settings")]
+    [SerializeField] private float initialMainEnemySpeed = 2f;
+    [SerializeField] private float maximumMainEnemySpeed = 5f;
 
     [Header("Lives Settings")]
     [SerializeField] private int initialLives = 3;
@@ -295,18 +300,27 @@ public class GameplayManager : MonoBehaviour
 
     private void UpdateQTEDifficulty()
     {
-        if (quickTimeEvent == null) return;
-
         // Calculate difficulty progress (0 to 1) based on complexity
         float difficultyProgress = (_currentComplexity - 1f) / (maxComplexity - 1f);
 
-        // Green zone shrinks as difficulty increases
-        float greenZoneSize = Mathf.Lerp(initialGreenZoneSize, minimumGreenZoneSize, difficultyProgress);
+        // Update QTE difficulty
+        if (quickTimeEvent != null)
+        {
+            // Green zone shrinks as difficulty increases
+            float greenZoneSize = Mathf.Lerp(initialGreenZoneSize, minimumGreenZoneSize, difficultyProgress);
 
-        // Speed increases as difficulty increases
-        float qteSpeed = Mathf.Lerp(initialQTESpeed, maximumQTESpeed, difficultyProgress);
+            // Speed increases as difficulty increases
+            float qteSpeed = Mathf.Lerp(initialQTESpeed, maximumQTESpeed, difficultyProgress);
 
-        quickTimeEvent.SetDifficulty(qteSpeed, greenZoneSize);
+            quickTimeEvent.SetDifficulty(qteSpeed, greenZoneSize);
+        }
+
+        // Update enemy speed difficulty
+        if (enemySpawner != null)
+        {
+            float enemySpeed = Mathf.Lerp(initialMainEnemySpeed, maximumMainEnemySpeed, difficultyProgress);
+            enemySpawner.SetMainEnemySpeed(enemySpeed);
+        }
     }
 
     public void RemoveLife()
