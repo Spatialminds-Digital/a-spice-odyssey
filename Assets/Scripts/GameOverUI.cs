@@ -1,38 +1,37 @@
+using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameOverUI : MonoBehaviour
 {
     [Header("UI References")]
     [SerializeField] private GameObject gameOverContainer;
-    [SerializeField] private TMP_Text txtFinalScore;
-    [SerializeField] private TMP_Text txtHighScore;
-    [SerializeField] private Button btnRestart;
-    [SerializeField] private Button btnMainMenu;
+    [SerializeField] private TMP_Text txtHighScoreAvailable;
+    [SerializeField] private TMP_Text txtScore;
+    [SerializeField] private GameObject gameOverEffect;
 
     [Header("Settings")]
-    [SerializeField] private string finalScoreFormat = "Score: {0}";
-    [SerializeField] private string highScoreFormat = "High Score: {0}";
-    [SerializeField] private string highScoreKey = "HighScore";
+    [SerializeField] private float showDelayTime = .40f;
+    [SerializeField] private string scoreSceneName = "score";
 
-    private int _highScore;
 
     private void Awake()
     {
-        _highScore = PlayerPrefs.GetInt(highScoreKey, 0);
+        
     }
 
     private void OnEnable()
     {
         GameplayManager.OnGameOver += HandleGameOver;
         GameplayManager.OnGameStarted += HandleGameStarted;
+        InputService.Instance.OnUISelect += GoToScores;
+    }
 
-        if (btnRestart != null)
-            btnRestart.onClick.AddListener(OnRestartClicked);
-
-        if (btnMainMenu != null)
-            btnMainMenu.onClick.AddListener(OnMainMenuClicked);
+    private void GoToScores()
+    {
+        SceneManager.LoadScene(scoreSceneName);
     }
 
     private void OnDisable()
@@ -40,11 +39,6 @@ public class GameOverUI : MonoBehaviour
         GameplayManager.OnGameOver -= HandleGameOver;
         GameplayManager.OnGameStarted -= HandleGameStarted;
 
-        if (btnRestart != null)
-            btnRestart.onClick.RemoveListener(OnRestartClicked);
-
-        if (btnMainMenu != null)
-            btnMainMenu.onClick.RemoveListener(OnMainMenuClicked);
     }
 
     private void Start()
@@ -54,8 +48,8 @@ public class GameOverUI : MonoBehaviour
 
     private void HandleGameOver()
     {
-        Show();
-        UpdateScoreDisplay();
+        gameOverEffect?.SetActive(true);
+        Invoke(nameof(Show), showDelayTime);
     }
 
     private void HandleGameStarted()
@@ -71,48 +65,11 @@ public class GameOverUI : MonoBehaviour
 
     private void Hide()
     {
+        gameOverEffect?.SetActive(false);
+
         if (gameOverContainer != null)
             gameOverContainer.SetActive(false);
     }
 
-    private void UpdateScoreDisplay()
-    {
-        var manager = GameplayManager.Instance;
-        if (manager == null) return;
 
-        int finalScore = manager.Score;
-
-        if (txtFinalScore != null)
-        {
-            txtFinalScore.SetText(string.Format(finalScoreFormat, finalScore));
-        }
-
-        // Check and update high score
-        if (finalScore > _highScore)
-        {
-            _highScore = finalScore;
-            PlayerPrefs.SetInt(highScoreKey, _highScore);
-            PlayerPrefs.Save();
-        }
-
-        if (txtHighScore != null)
-        {
-            txtHighScore.SetText(string.Format(highScoreFormat, _highScore));
-        }
-    }
-
-    private void OnRestartClicked()
-    {
-        var manager = GameplayManager.Instance;
-        if (manager != null)
-        {
-            manager.RestartGame();
-        }
-    }
-
-    private void OnMainMenuClicked()
-    {
-        Time.timeScale = 1f;
-        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
-    }
 }
