@@ -159,13 +159,12 @@ public class GameplayManager : MonoBehaviour
 
         int countdown = Mathf.CeilToInt(countdownDuration);
 
-        for (int i = countdown; i > 0; i--)
+        for (int i = countdown; i >= 0; i--)
         {
             OnCountdownTick?.Invoke(i);
             yield return _countdownWait;
         }
 
-        OnCountdownTick?.Invoke(0);
         BeginGameplay();
     }
 

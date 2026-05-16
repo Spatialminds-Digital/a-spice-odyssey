@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [DefaultExecutionOrder(-10)]
+
 public class InputService : MonoBehaviour
 {
     private ArcadeInputs _arcadeInputs;
@@ -23,12 +24,16 @@ public class InputService : MonoBehaviour
 
     void Awake()
     {
+        DontDestroyOnLoad(gameObject);
+        
         if (Instance != null && Instance != this)
             Destroy(this);
 
         Instance = this;
 
         _arcadeInputs = new ArcadeInputs();
+
+        
     }
 
     void OnEnable()

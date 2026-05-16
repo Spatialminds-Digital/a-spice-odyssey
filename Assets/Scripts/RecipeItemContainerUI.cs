@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RecipeItemContainerUI : MonoBehaviour
 {
@@ -8,9 +9,11 @@ public class RecipeItemContainerUI : MonoBehaviour
 
     private readonly List<TrayItemUI> _itemPool = new();
 
+    private Image bg;
+
     private void Start()
     {
-        CollectExistingItems();
+        bg =  itemContainer.GetComponent<Image>();
         PlayerInventory.Instance.OnInventoryChanged += UpdateUI;
         UpdateUI();
     }
@@ -39,6 +42,8 @@ public class RecipeItemContainerUI : MonoBehaviour
     private void UpdateUI()
     {
         var inventory = PlayerInventory.Instance;
+
+        bg.enabled = inventory.HasIngredients || inventory.HasRecipe;
 
         if (inventory.HasRecipe)
         {

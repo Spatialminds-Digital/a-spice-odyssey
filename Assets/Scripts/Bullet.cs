@@ -14,7 +14,7 @@ public class Bullet : MonoBehaviour
 
     void Start()
     {
-        Invoke(nameof(ReturnToPool), 10);
+        Invoke(nameof(ReturnToPool), 5);
     }
 
     void Update()
