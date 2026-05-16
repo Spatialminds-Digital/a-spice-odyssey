@@ -2,6 +2,9 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine.Events;
+using UnityEditor;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
@@ -33,6 +36,12 @@ public class MainMenu : MonoBehaviour
 
     [Header("Animation Settings")]
     [SerializeField] private float animationDuration = 0.3f;
+
+    [Header("Scenes")]
+    [SerializeField] private string gameSceneName = "game";
+
+    public UnityEvent OnItemHover;
+    public UnityEvent OnStateChange;
 
     private InputService _inputService;
     private MenuState _currentState = MenuState.Main;
@@ -119,6 +128,11 @@ public class MainMenu : MonoBehaviour
                     break;
             }
         }
+        else if (_currentState == MenuState.Intro)
+        {
+            //Move to the game
+            SceneManager.LoadScene(gameSceneName);
+        }
         else if (_currentState != MenuState.Intro)
         {
             SetState(MenuState.Main);
@@ -160,6 +174,7 @@ public class MainMenu : MonoBehaviour
         {
             targetObject.SetActive(true);
             AnimateStateIn(targetObject);
+            OnStateChange?.Invoke();
         }
 
         if (newState == MenuState.Main)
@@ -180,6 +195,9 @@ public class MainMenu : MonoBehaviour
         if (_buttons != null && index >= 0 && index < _buttons.Length && _buttons[index] != null)
         {
             EventSystem.current.SetSelectedGameObject(_buttons[index].gameObject);
+            OnItemHover?.Invoke();
         }
+
+        
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 public class HighScoreService : MonoBehaviour
 {
     private const string PlayerPrefsKey = "HighScores";
-    private const int MaxScores = 10;
+    private const int MaxScores = 5;
 
     public event Action<SavedHighScores> OnHighScoresLoaded;
     public event Action<SavedHighScores> OnHighScoresSaved;
@@ -26,6 +26,11 @@ public class HighScoreService : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(this.gameObject);
 
+    }
+
+    void Start()
+    {
+        LoadHighScores();
     }
 
     public SavedHighScores LoadHighScores()
