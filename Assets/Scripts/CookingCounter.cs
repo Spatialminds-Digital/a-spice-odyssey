@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CookingCounter : BaseCounter
 {
@@ -13,6 +14,9 @@ public class CookingCounter : BaseCounter
     private List<RecipeItem> _pendingIngredients;
 
     public bool HasCookedRecipe => _cookedRecipe != null;
+
+    public UnityEvent OnCookingStart;
+    public UnityEvent OnCookingComplete;
 
     private void OnEnable()
     {
@@ -67,6 +71,7 @@ public class CookingCounter : BaseCounter
             //stop player movement
             GameplayManager.Instance.playerMovement.enabled = false;
             cookingParticle?.SetActive(true);
+            OnCookingStart?.Invoke();
         }
         else
         {
@@ -100,6 +105,7 @@ public class CookingCounter : BaseCounter
         
         GameplayManager.Instance.playerMovement.enabled = true;
         cookingParticle?.SetActive(false);
+        OnCookingComplete?.Invoke();
     }
 
     private Recipe FindMatchingRecipe(List<RecipeItem> ingredients)

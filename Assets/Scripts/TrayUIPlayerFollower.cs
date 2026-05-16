@@ -7,14 +7,22 @@ public class TrayUIPlayerFollower : MonoBehaviour
     [SerializeField] private Camera mainCamera;
     [SerializeField] private Vector2 offset;
     [SerializeField] private float smoothSpeed = 10f;
+    [SerializeField] private Canvas canvas;
 
     private RectTransform _rectTransform;
-    private Canvas _canvas;
+    private RectTransform _canvasRectTransform;
+    private Camera _canvasCamera;
+
+    private Vector2 _targetScreenPos;
+
+    private Vector2 _smoothPos;
 
     private void Awake()
     {
         _rectTransform = GetComponent<RectTransform>();
-        _canvas = GetComponentInParent<Canvas>();
+        canvas = GetComponentInParent<Canvas>();
+        _canvasRectTransform = canvas.GetComponent<RectTransform>();
+        _canvasCamera = canvas.worldCamera;
 
         if (mainCamera == null)
         {
@@ -26,18 +34,25 @@ public class TrayUIPlayerFollower : MonoBehaviour
     {
         if (target == null || mainCamera == null) return;
 
-        Vector2 targetScreenPos = mainCamera.WorldToScreenPoint(target.position);
-        targetScreenPos += offset;
+        _targetScreenPos = mainCamera.WorldToScreenPoint(target.position + (Vector3)offset);
 
-        Vector2 clampedPos = ClampToScreen(targetScreenPos);
+        //Vector2 clampedScreenPos = ClampToScreen(targetScreenPos);
 
-        Vector2 currentPos = _rectTransform.position;
-        Vector2 smoothedPos = Vector2.Lerp(currentPos, clampedPos, smoothSpeed * Time.deltaTime);
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            _canvasRectTransform,
+            _targetScreenPos,
+            _canvasCamera,
+            out Vector2 localPoint
+        );
 
-        _rectTransform.position = smoothedPos;
+       // Vector2 currentLocalPos = _rectTransform.anchoredPosition;
+        _smoothPos = Vector2.Lerp(_rectTransform.anchoredPosition, localPoint, smoothSpeed * Time.deltaTime);
+       
+       _rectTransform.anchoredPosition = _smoothPos;
+       //transform.position = smoothedPos;
     }
 
-    private Vector2 ClampToScreen(Vector2 screenPos)
+   /* private Vector2 ClampToScreen(Vector2 screenPos)
     {
         Vector2 size = _rectTransform.rect.size;
         Vector2 pivot = _rectTransform.pivot;
@@ -54,5 +69,5 @@ public class TrayUIPlayerFollower : MonoBehaviour
         screenPos.y = Mathf.Clamp(screenPos.y, minY, maxY);
 
         return screenPos;
-    }
+    }*/
 }

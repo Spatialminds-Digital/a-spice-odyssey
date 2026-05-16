@@ -9,6 +9,9 @@ public class SpaceshipCannon : MonoBehaviour
     [SerializeField] private Transform originPoint;
 
     [SerializeField] private EnemySpawner spawner;
+
+    [SerializeField] private CameraShake cameraShake;
+    [SerializeField] private RandomAudioPicker fireCannonSound;
     private float _timer;
 
     void Start()

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Pool;
 
 public class SpaceShipEnemyGun : MonoBehaviour
@@ -8,6 +9,8 @@ public class SpaceShipEnemyGun : MonoBehaviour
     [SerializeField] private float fireInterval = 1f;
     [SerializeField] private int poolDefaultCapacity = 10;
     [SerializeField] private int poolMaxSize = 20;
+
+    public UnityEvent OnFire;
 
     private IObjectPool<Bullet> bulletPool;
     private float fireTimer;
@@ -38,6 +41,9 @@ public class SpaceShipEnemyGun : MonoBehaviour
     private void FireBullet()
     {
         bulletPool.Get();
+
+        OnFire?.Invoke();
+
     }
 
     private Bullet CreateBullet()
