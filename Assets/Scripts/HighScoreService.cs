@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+[DefaultExecutionOrder(-99)]
 public class HighScoreService : MonoBehaviour
 {
     private const string PlayerPrefsKey = "HighScores";

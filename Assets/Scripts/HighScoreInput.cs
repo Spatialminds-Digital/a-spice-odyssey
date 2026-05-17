@@ -50,7 +50,7 @@ public class HighScoreInput : MonoBehaviour
     private void NextChar()
     {
         _selectedCharacter++;
-        if(_selectedCharacter > charTexts.Length) _selectedCharacter = 0;
+        if(_selectedCharacter >= charTexts.Length) _selectedCharacter = 0;
 
         indicator.position = new Vector2(charTexts[_selectedCharacter].transform.position.x, indicator.position.y);
     }
@@ -65,7 +65,7 @@ public class HighScoreInput : MonoBehaviour
     private void UpdateCharUp()
     {
         _charFromAlphabet++;
-        if(_charFromAlphabet > alphabet.Length) _charFromAlphabet = 0;
+        if(_charFromAlphabet >= alphabet.Length) _charFromAlphabet = 0;
         charTexts[_selectedCharacter].SetText(alphabet[_charFromAlphabet].ToString());
     }
 

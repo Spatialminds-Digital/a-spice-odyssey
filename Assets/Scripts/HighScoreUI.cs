@@ -10,7 +10,7 @@ public class HighScoreUI : MonoBehaviour
         HighScoreService.Instance.OnHighScoresLoaded += HandleHighScoreLoad;
     }
 
-    void Oestroy()
+    void OnDestroy()
     {
         HighScoreService.Instance.OnHighScoresLoaded -= HandleHighScoreLoad;
         
@@ -19,6 +19,11 @@ public class HighScoreUI : MonoBehaviour
     void OnDisable()
     {
         HighScoreService.Instance.OnHighScoresLoaded -= HandleHighScoreLoad;
+    }
+
+    void Start()
+    {
+        HighScoreService.Instance.LoadHighScores();
     }
 
     private void HandleHighScoreLoad(SavedHighScores scores)
