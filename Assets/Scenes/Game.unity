@@ -3526,64 +3526,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &670429271
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 670429273}
-  - component: {fileID: 670429272}
-  - component: {fileID: 670429274}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &670429272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 670429271}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a521163d2267c6d4e8e0cadfd0c8d845, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: MainGame::InputService
-  QuitTime: 180
---- !u!4 &670429273
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 670429271}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.98443, y: -1.02907, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &670429274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 670429271}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5185979cdc550a749ac4274ccaa6e4f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: MainGame::HighScoreService
 --- !u!1 &675011928
 GameObject:
   m_ObjectHideFlags: 0
@@ -5135,7 +5077,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameOverUI
   gameOverContainer: {fileID: 1268232518}
-  txtHighScoreAvailable: {fileID: 2051809368}
+  lblHighScoreAvailable: {fileID: 0}
   txtScore: {fileID: 248770013}
   gameOverEffect: {fileID: 675011928}
   showDelayTime: 0.4
@@ -16351,4 +16293,3 @@ SceneRoots:
   - {fileID: 394505509}
   - {fileID: 614808103}
   - {fileID: 1138826261}
-  - {fileID: 670429273}

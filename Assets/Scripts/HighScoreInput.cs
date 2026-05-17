@@ -9,7 +9,7 @@ public class HighScoreInput : MonoBehaviour
     [SerializeField] private Transform indicator;
     [SerializeField] private TMP_Text[] charTexts;
     [SerializeField] private TMP_Text scoreText;
-    [SerializeField] private string nextScene = "menu";
+    [SerializeField] private string nextScene = "main";
 
     private short _selectedCharacter = 0;
     private short _charFromAlphabet = 0;
