@@ -11,6 +11,7 @@ public class ScoreScene : MonoBehaviour
     {
         if(HighScoreService.Instance.CheckIfScoreIsHigh(PlayerPrefs.GetInt("SCORE")))
         {
+            Debug.Log("Score"+ PlayerPrefs.GetInt("SCORE"));
             highScoreInput.ShowHighScoreInput(PlayerPrefs.GetInt("SCORE"));
             return;
         }

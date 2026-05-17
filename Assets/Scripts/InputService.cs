@@ -44,7 +44,7 @@ public class InputService : MonoBehaviour
         _arcadeInputs.UI.Up.performed += HandleUIUp;
         _arcadeInputs.UI.Down.performed += HandleUIDown;
         _arcadeInputs.UI.Quit.performed += HandleUIQuit;
-        _arcadeInputs.UI.Start.performed += HandleUISelect;   
+        _arcadeInputs.UI.Start.performed += HandleUIStart;   
 
         _arcadeInputs.Player.Enable();
         _arcadeInputs.UI.Enable();
@@ -58,7 +58,7 @@ public class InputService : MonoBehaviour
         _arcadeInputs.UI.Up.performed -= HandleUIUp;
         _arcadeInputs.UI.Down.performed -= HandleUIDown;
         _arcadeInputs.UI.Quit.performed -= HandleUIQuit;
-        _arcadeInputs.UI.Start.performed -= HandleUISelect;   
+        _arcadeInputs.UI.Start.performed -= HandleUIStart;   
 
         _arcadeInputs.Player.Disable();
         _arcadeInputs.UI.Disable();

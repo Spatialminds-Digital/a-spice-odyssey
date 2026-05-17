@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 28a9b69848304e34181e19afe59e28c3
+guid: 9ff88cf6102e141e88771ae46ef1ccb6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 253071890776830745
-    second: ChatGPT Image May 12, 2026, 09_10_46 AM_0
-  - first:
-      213: -4752702208432195726
-    second: ChatGPT Image May 12, 2026, 09_10_46 AM_1
-  - first:
-      213: 1849979908303015169
-    second: ChatGPT Image May 12, 2026, 09_10_46 AM_2
+      213: -5264667126511008687
+    second: "Screenshot 2026-05-17 at 10.13.50\u202FAM_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -52,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -78,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -132,67 +126,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ChatGPT Image May 12, 2026, 09_10_46 AM_0
+      name: "Screenshot 2026-05-17 at 10.13.50\u202FAM_0"
       rect:
         serializedVersion: 2
-        x: 74
-        y: 399
-        width: 476
-        height: 280
+        x: 0
+        y: 0
+        width: 372
+        height: 392
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 913b3683b87138300800000000000000
-      internalID: 253071890776830745
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ChatGPT Image May 12, 2026, 09_10_46 AM_1
-      rect:
-        serializedVersion: 2
-        x: 557
-        y: 400
-        width: 380
-        height: 257
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2773f27b5820b0eb0800000000000000
-      internalID: -4752702208432195726
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ChatGPT Image May 12, 2026, 09_10_46 AM_2
-      rect:
-        serializedVersion: 2
-        x: 1038
-        y: 399
-        width: 323
-        height: 344
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 10dc20ccce27ca910800000000000000
-      internalID: 1849979908303015169
+      spriteID: 15482af442520f6b0800000000000000
+      internalID: -5264667126511008687
       vertices: []
       indices: 
       edges: []
@@ -201,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 73332403119563948b05681b18064f88
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -209,15 +159,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceOnImport
-        value: False
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":43.0},"gridSpriteOffset":{"x":0.0,"y":7.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      ChatGPT Image May 12, 2026, 09_10_46 AM_0: 253071890776830745
-      ChatGPT Image May 12, 2026, 09_10_46 AM_1: -4752702208432195726
-      ChatGPT Image May 12, 2026, 09_10_46 AM_2: 1849979908303015169
+      "Screenshot 2026-05-17 at 10.13.50\u202FAM_0": -5264667126511008687
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
