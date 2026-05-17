@@ -8,7 +8,7 @@ public class GameOverUI : MonoBehaviour
 {
     [Header("UI References")]
     [SerializeField] private GameObject gameOverContainer;
-    [SerializeField] private TMP_Text txtHighScoreAvailable;
+    [SerializeField] private GameObject lblHighScoreAvailable;
     [SerializeField] private TMP_Text txtScore;
     [SerializeField] private GameObject gameOverEffect;
 
@@ -26,11 +26,13 @@ public class GameOverUI : MonoBehaviour
     {
         GameplayManager.OnGameOver += HandleGameOver;
         GameplayManager.OnGameStarted += HandleGameStarted;
-        InputService.Instance.OnUISelect += GoToScores;
     }
 
     private void GoToScores()
     {
+        
+        InputService.Instance.OnUISelect -= GoToScores;
+        PlayerPrefs.SetInt("SCORE", GameplayManager.Instance.Score);
         SceneManager.LoadScene(scoreSceneName);
     }
 
@@ -49,6 +51,8 @@ public class GameOverUI : MonoBehaviour
     private void HandleGameOver()
     {
         gameOverEffect?.SetActive(true);
+        
+        InputService.Instance.OnUISelect += GoToScores;
         Invoke(nameof(Show), showDelayTime);
     }
 
@@ -61,6 +65,11 @@ public class GameOverUI : MonoBehaviour
     {
         if (gameOverContainer != null)
             gameOverContainer.SetActive(true);
+
+        txtScore.SetText(GameplayManager.Instance.Score.ToString());
+
+        lblHighScoreAvailable.SetActive(HighScoreService.Instance.CheckIfScoreIsHighest(GameplayManager.Instance.Score));
+        
     }
 
     private void Hide()

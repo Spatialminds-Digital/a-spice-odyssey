@@ -10,14 +10,17 @@ public class LauncherCounter : BaseCounter
         if (Inventory.IsEmpty) return;
 
         //cannot launch ingredients
-        if(PlayerInventory.Instance.HasIngredients && !PlayerInventory.Instance.HasRecipe) {
-            EffectService.Instance.ShowMessage("Cant Launch this!!!", Color.orangeRed);
+        if (PlayerInventory.Instance.HasIngredients && !PlayerInventory.Instance.HasRecipe)
+        {
+            EffectService.Instance.ShowMessage("Cant Launch this!!!", Color.orangeRed, .75f);
+            AudioService.Instance.PlayError();
+
             OnCounterInteractionError?.Invoke();
             return;
         }
 
         //launch the recipe
-        if(orderService!=null)
+        if (orderService != null)
             orderService.CheckAndRemoveOrder(PlayerInventory.Instance.TakeRecipe());
 
         // TODO: Add launching logic (animation, projectile, etc.)

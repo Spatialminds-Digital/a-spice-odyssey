@@ -52,6 +52,7 @@ public class GameplayUI : MonoBehaviour
         if (txtCountdown != null)
         {
             txtCountdown.SetText(count > 0 ? count.ToString() : goText);
+            AudioService.Instance.PlayCountdown();
         }
     }
 

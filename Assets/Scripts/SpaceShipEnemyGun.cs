@@ -41,6 +41,7 @@ public class SpaceShipEnemyGun : MonoBehaviour
     private void FireBullet()
     {
         bulletPool.Get();
+        AudioService.Instance.PlayBulletSound();
 
         OnFire?.Invoke();
 
@@ -51,7 +52,7 @@ public class SpaceShipEnemyGun : MonoBehaviour
         Bullet bullet = Instantiate(bulletPrefab, spawnPoint.position, spawnPoint.rotation);
         bullet.SetPool(bulletPool);
 
-        AudioService.Instance.PlayBulletSound();
+        
 
         return bullet;
     }

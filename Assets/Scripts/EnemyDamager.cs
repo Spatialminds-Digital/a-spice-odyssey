@@ -46,7 +46,7 @@ public class EnemyDamager : MonoBehaviour
         AudioService.Instance.PlayBigExplosion();
         EffectService.Instance.camShake.Shake(10);
 
-        EffectService.Instance.ShowMessage("LIFE LOST!", Color.softRed, 1);
+        EffectService.Instance.ShowMessage("LIFE LOST!", Color.softRed, 2);
 
 
         // Remove a life from the player
