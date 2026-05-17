@@ -15,12 +15,12 @@ public class ScoreScene : MonoBehaviour
             return;
         }
 
-        InputService.Instance.OnUISelect += LoadMenu;
+        InputService.Instance.OnUIStart += LoadMenu;
     }
 
     private void LoadMenu()
     {
-        InputService.Instance.OnUISelect -= LoadMenu;
+        InputService.Instance.OnUIStart -= LoadMenu;
         SceneManager.LoadScene("menu");
     }
 }
