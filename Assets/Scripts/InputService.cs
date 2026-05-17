@@ -24,7 +24,7 @@ public class InputService : MonoBehaviour
 
     void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+       // DontDestroyOnLoad(gameObject);
         
         if (Instance != null && Instance != this)
             Destroy(this);

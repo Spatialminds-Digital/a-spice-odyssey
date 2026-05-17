@@ -52,6 +52,8 @@ public class HighScoreInput : MonoBehaviour
         _selectedCharacter++;
         if(_selectedCharacter >= charTexts.Length) _selectedCharacter = 0;
 
+        _charFromAlphabet = 0;
+
         indicator.position = new Vector2(charTexts[_selectedCharacter].transform.position.x, indicator.position.y);
     }
 
@@ -73,6 +75,7 @@ public class HighScoreInput : MonoBehaviour
     {
         _selectedCharacter = 0;
         _score = score;
+        scoreText.SetText(score.ToString());
 
         indicator.position = new Vector2(charTexts[_selectedCharacter].transform.position.x, indicator.position.y);
         highScoreInputUI.SetActive(true);
