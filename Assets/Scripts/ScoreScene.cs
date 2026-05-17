@@ -21,6 +21,6 @@ public class ScoreScene : MonoBehaviour
     private void LoadMenu()
     {
         InputService.Instance.OnUIStart -= LoadMenu;
-        SceneManager.LoadScene("menu");
+        SceneManager.LoadScene("Main");
     }
 }
