@@ -216,12 +216,16 @@ public class GameplayManager : MonoBehaviour
 
         int orderScore = CalculateOrderScore(order.recipe);
         AddScore(orderScore);
+
+        EffectService.Instance.ShowMessage($"+ {orderScore} kill!", Color.turquoise);
     }
 
     private void HandleWrongOrder(Order order)
     {
         int penalty = CalculatePenalty();
         SubtractScore(penalty);
+        EffectService.Instance.ShowMessage($"+ {penalty} wrong spices!!", Color.indianRed);
+
         RemoveLife();
     }
 

@@ -199,6 +199,10 @@ public class EnemySpawner : MonoBehaviour
             {
                 enemy.Kill();
                 OnEnemyKill?.Invoke(enemy);
+
+                AudioService.Instance.PlayBigExplosion();
+                EffectService.Instance.camShake.Shake(4);
+
             }
         }
     }

@@ -41,6 +41,14 @@ public class EnemyDamager : MonoBehaviour
         // Kill the enemy
         enemy.Kill();
 
+        // Life lose Audio / Effect
+        EffectService.Instance.ShowRedVignette(1);
+        AudioService.Instance.PlayBigExplosion();
+        EffectService.Instance.camShake.Shake(10);
+
+        EffectService.Instance.ShowMessage("LIFE LOST!", Color.softRed, 1);
+
+
         // Remove a life from the player
         if (gameplayManager != null)
         {

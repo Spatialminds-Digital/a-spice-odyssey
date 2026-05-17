@@ -44,6 +44,9 @@ public class Enemy : MonoBehaviour
         {
             Instantiate(killParticle, transform.position, Quaternion.identity);
         }
+
+
+
         _enemyOrder = null;
 
         var movement = GetComponent<EnemyMovement>();

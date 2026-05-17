@@ -50,6 +50,9 @@ public class SpaceShipEnemyGun : MonoBehaviour
     {
         Bullet bullet = Instantiate(bulletPrefab, spawnPoint.position, spawnPoint.rotation);
         bullet.SetPool(bulletPool);
+
+        AudioService.Instance.PlayBulletSound();
+
         return bullet;
     }
 

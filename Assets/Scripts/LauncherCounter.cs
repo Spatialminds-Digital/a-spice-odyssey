@@ -11,6 +11,7 @@ public class LauncherCounter : BaseCounter
 
         //cannot launch ingredients
         if(PlayerInventory.Instance.HasIngredients && !PlayerInventory.Instance.HasRecipe) {
+            EffectService.Instance.ShowMessage("Cant Launch this!!!", Color.orangeRed);
             OnCounterInteractionError?.Invoke();
             return;
         }

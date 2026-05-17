@@ -28,6 +28,9 @@ public class Bullet : MonoBehaviour
         if(other.CompareTag("BasicEnemy"))
         {
             other.GetComponent<Enemy>().Kill();
+
+            AudioService.Instance.PlayMiniExplosion();
+            EffectService.Instance.camShake.Shake(1);
         }
     }
 

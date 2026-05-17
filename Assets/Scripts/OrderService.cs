@@ -32,6 +32,10 @@ public class OrderService : MonoBehaviour
             {
                 var completedOrder = _availableOrders[i];
                 _availableOrders.RemoveAt(i);
+
+                //cannon sound
+                AudioService.Instance.PlayCannonSound();
+
                 OnOrderComplete?.Invoke(completedOrder);
                 return;
             }
