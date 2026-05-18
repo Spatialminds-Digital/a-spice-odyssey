@@ -1,4 +1,3 @@
-using Unity.Mathematics;
 using UnityEngine;
 
 public class ObjectSpawner : MonoBehaviour
@@ -7,7 +6,7 @@ public class ObjectSpawner : MonoBehaviour
 
     public void SpawnObject(Transform position)
     {
-        Instantiate(objectToSpawn, position.position, quaternion.identity);
+        Instantiate(objectToSpawn, position.position, Quaternion.identity);
     }
 
     

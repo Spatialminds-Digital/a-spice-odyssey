@@ -1,5 +1,7 @@
+using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameplayUI : MonoBehaviour
 {
@@ -27,6 +29,8 @@ public class GameplayUI : MonoBehaviour
         GameplayManager.OnScoreChanged += HandleScoreChanged;
         GameplayManager.OnLivesChanged += HandleLivesChanged;
         GameplayManager.OnComplexityChanged += HandleComplexityChanged;
+
+        InputService.Instance.OnUIStart += HandleExit;
     }
 
     private void OnDisable()
@@ -36,7 +40,16 @@ public class GameplayUI : MonoBehaviour
         GameplayManager.OnScoreChanged -= HandleScoreChanged;
         GameplayManager.OnLivesChanged -= HandleLivesChanged;
         GameplayManager.OnComplexityChanged -= HandleComplexityChanged;
+
+        InputService.Instance.OnUIStart -= HandleExit;
+
     }
+
+    private void HandleExit()
+    {
+        SceneManager.LoadScene("Main");
+    }
+
 
     private void Start()
     {
